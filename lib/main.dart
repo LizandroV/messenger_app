@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_app/auth/login_or_register.dart';
+// import 'package:messenger_app/pages/login_page.dart';
+// import 'package:messenger_app/pages/register_page.dart';
+import 'package:messenger_app/themes/light_mode.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +13,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginOrRegister(),
+      theme: lightMode,
     );
   }
 }
