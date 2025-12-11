@@ -1,38 +1,62 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+The app I built is a simple messaging application made with Flutter and Firebase. Users can authenticate, send messages, and see data stored in the cloud in real time. The program integrates directly with Firebase Authentication and Cloud Firestore, allowing the app to securely manage users and interact with the database. Once the app is running, a user can create an account, sign in, and start sending messages that are stored and retrieved from Firestore.
 
-{Provide a description of the software that you wrote and how it integrates with a Cloud Database. Describe how to use your program.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of the cloud database.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/XUKM1-nRC5Y)
 
 # Cloud Database
 
-{Describe the cloud database you are using.}
+The database consists of two main collections:
 
-{Describe the structure of the database that you created.}
+- **users**  
+  Stores each user’s profile information and unique identifiers.
+
+- **chat-rroms**  
+  Contains all messages sent within the app, including:
+  - sender ID  
+  - receiver ID  
+  - message text  
+  - timestamps  
+
+The collections are linked through user IDs, allowing the app to correctly relate messages to specific users and retrieve conversations.
+
+---
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+This project was developed using:
 
-{Describe the programming language that you used and any libraries.}
+- **Flutter** for building the UI and application logic  
+- **Firebase Authentication** for user login and registration  
+- **Cloud Firestore** for cloud data storage  
+- **Dart** as the primary programming language  
+- **Visual Studio Code** as the development environment  
+- **Android Emulator / physical device** for testing  
 
+### Libraries Used
+
+- `firebase_core`
+- `cloud_firestore`
+- `firebase_auth`
+
+These packages allow the app to authenticate users, connect to the database, and work with cloud-stored data.
+
+---
 # Useful Websites
+Here are some resources that were especially helpful during development:
 
-{Make a list of websites that you found helpful in this project}
+- [Flutter Documentation](https://docs.flutter.dev)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [Stack Overflow](https://stackoverflow.com)
+- [Dart Language Guide](https://dart.dev/guides)
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+---
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+There are several areas I plan to improve or expand in future versions:
 
-- Item 1
-- Item 2
-- Item 3
+- Implement notifications for new messages  
+- Add support for group chats or chat rooms  
+- Improve UI design and animations  
+- Add user profile images and additional profile fields  
