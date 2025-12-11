@@ -27,8 +27,8 @@ class ChatService {
 
     // create a new message
     Message newMessage = Message(
-      senderID: currentUserEmail,
-      senderEmail: currentUserID,
+      senderID: currentUserID,
+      senderEmail: currentUserEmail,
       receiverID: receiverID,
       message: message,
       timestamp: timestamp,
@@ -45,11 +45,24 @@ class ChatService {
         .doc(chatRoomID)
         .collection("messages")
         .add(newMessage.toMap());
-
-    // get messages
   }
+
+  // get messages
+  Stream<QuerySnapshot> getMessages(String userID, String otherUserID) {
+    // construct a chatroom ID for the two users
+    List<String> ids = [userID, otherUserID];
+    ids.sort();
+    String chatRoomID = ids.join('_');
+
+    return _firestore
+        .collection("chat_rooms")
+        .doc(chatRoomID)
+        .collection("messages")
+        .orderBy("timestamp", descending: false)
+        .snapshots();
+  }
+}
 
   // send message
 
   // ger messages
-}
